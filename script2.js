@@ -9,7 +9,8 @@ let groupSize =5
 let group   // 리스트자료 [1,2,3,4,5] 식
 let groups  // [ [1,2,3,4,5], [6,7,8,9,10],......]
 let groupIndex =0;
-let currentIndex = 0;    
+let currentIndex = 0; 
+let gotError = false   
 
 const replaceImage = 'noonatimes.png'
 const input = document.querySelector('#search-input')
@@ -88,6 +89,9 @@ function moveToPage(pageNo){
 
 async function render(){
     const data = await getNews()  
+    if(gotError){
+        return;   // --> errorRender()로 가게 한다.
+    } 
     totalResults = data.totalResults;
     dataList = data.articles;
 
@@ -116,7 +120,7 @@ async function render(){
                 </div>
                 <div class="col-lg-8">
                     <h2 class='title' onclick="getDetail('${news.url}')">${news.title}</h2>
-                    <p class='content'>${news.content || news.description}</p>
+                    <p class='content'>${news.description || news.content}</p>
                     <div>${news.source.name} : ${news.publishedAt}</div>
                 </div>
             </div>
@@ -131,7 +135,7 @@ async function render(){
                     </div>
                     <div class="col-lg-8">
                         <h2 class='title' onclick="getDetail('${news.url}')">${news.title}</h2>
-                        <p class='content'>${news.content || news.description}</p>
+                        <p class='content'>${news.description || news.content}</p>
                         <div>${news.source.name} : ${news.publishedAt}</div>
                     </div>
                 </div>
@@ -206,15 +210,13 @@ function search(){
     render()
     input.value ='' // 인풋 리셋
 }
-function search2(){
-    const keyword = input.value;
-    const e = window.event; 
-    if (e.key =='Enter'){
-        url3 =`http://times-node-env.eba-appvq3ef.ap-northeast-2.elasticbeanstalk.com/top-headlines?country=${country}&q=${keyword}` 
-        render()
-        input.value ='' // 인풋 리셋
-    } 
-}
+// function search2(event){
+//     if (event.key =='Enter'){
+//         console.log('enter')
+//         event.preventDefault()
+//         search()
+//     } 
+// }
 
 function getCategory(카테고리){
     url3 =`http://times-node-env.eba-appvq3ef.ap-northeast-2.elasticbeanstalk.com/top-headlines?country=${country}&category=${카테고리}`; 
@@ -241,7 +243,9 @@ async function getNews(){
         }
 
     } catch(e){
+        gotError = true;
         console.log(e.message)
         errorRender(e.message)
+        gotError = false;
     }   
 }
