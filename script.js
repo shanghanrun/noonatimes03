@@ -17,7 +17,7 @@ const input = document.querySelector('#search-input')
 let country ='kr'
 // let url = `https://newsapi.org/v2/top-headlines?country=kr&apiKey=${apiKey}`;
 // let url2 = 'http://times-node-env.eba-appvq3ef.ap-northeast-2.elasticbeanstalk.com/top-headlines'
-// let url3 = `https://grand-gumdrop-215732.netlify.app/top-headlines`
+let url3 = `https://chic-nasturtium-fd9a30.netlify.app/top-headlines`
 
 
 //! 실행 코드
