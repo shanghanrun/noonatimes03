@@ -87,18 +87,16 @@ function moveToPage(pageNo){
 
 
 async function render(){
-    const data = await getNews()  
+    const data = await getNews()
+    if(gotError){
+        return;   // --> errorRender()로 가게 한다.
+    }  
     totalResults = data.totalResults;
     dataList = data.articles;
 
     // currentIndex=0 ;  초기화하면 안된다.
     totalGroupPages = Math.ceil(totalResults / pageSize)
     groups = makeGroups(totalResults)
-
-    if(gotError){
-        return;   // --> errorRender()로 가게 한다.
-    }
-    
     
     const newsBoard = document.querySelector('#news-board')
     newsBoard.innerHTML =''; //비우고 시작
