@@ -136,3 +136,41 @@ span {
 .title:hover {
     cursor: pointer;
 }
+
+@media (min-width: 540px) and (max-width: 1010px) {
+    .head-line {
+        width: 100%;
+        position: relative;
+    }
+
+    #head-img {
+        width: 40%;
+        height: 80%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+
+    }
+
+    #search-icon {
+        position: absolute;
+        top: -30px;
+        left: 10px;
+    }
+
+    #search-input {
+        position: absolute;
+        top: -80px;
+        padding: 2px;
+        padding-left: 10px;
+        width: 150px;
+    }
+
+    #search {
+        position: absolute;
+        top: -50px;
+        left: 63px;
+        width: 80px;
+
+    }
+}
