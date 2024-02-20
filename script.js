@@ -113,7 +113,7 @@ async function render(){
                 </div>
                 <div class="col-lg-8">
                     <h2 class='title' onclick="getDetail('${news.url}')">${news.title}</h2>
-                    <p class='content'>${news.content || news.description}</p>
+                    <p class='content'>${news.description || news.content}</p>
                     <div>${news.source.name} : ${news.publishedAt}</div>
                 </div>
             </div>
