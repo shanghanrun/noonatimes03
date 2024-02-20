@@ -22,7 +22,7 @@ let url3 = `https://chic-nasturtium-fd9a30.netlify.app/top-headlines`
 
 //! 실행 코드
 let query ={country: 'kr', page: page, pageSize: pageSize}  // 쿼리를 기억해두고 있어야 된다.
-// render()
+render()
 
 
 
