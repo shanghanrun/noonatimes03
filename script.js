@@ -165,6 +165,7 @@ async function render(){
     }
     if(groups.length > groupIndex+1){
         nextPage.disabled = false;
+        // 현재 5 그룹페이지(groupIndex 4 + 1)   groups =[[1][2][3][4][*5*][6]] 
     }
 
     if(currentIndex ==0){
