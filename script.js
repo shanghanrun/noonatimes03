@@ -79,8 +79,7 @@ function moveToPage(pageNo){
     } else {
         page = pageNo;   
         currentIndex = group.indexOf(page)
-    } 
-    query.page = page;
+    }
 
     render() 
 }
