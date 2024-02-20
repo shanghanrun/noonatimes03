@@ -211,7 +211,7 @@ function errorRender(message){
 
 function search(){
     const keyword = input.value;
-    url3 =`https://grand-gumdrop-215732.netlify.app/top-headlines?country=${country}&q=${keyword}` 
+    url3 =`https://chic-nasturtium-fd9a30.netlify.app/top-headlines=${country}&q=${keyword}` 
     render()
     input.value ='' // 인풋 리셋
 }
@@ -219,14 +219,14 @@ function search2(){
     const keyword = input.value;
     const e = window.event; 
     if (e.key =='Enter'){
-        url3 =`https://grand-gumdrop-215732.netlify.app/top-headlines?country=${country}&q=${keyword}` 
+        url3 =`https://chic-nasturtium-fd9a30.netlify.app/top-headlines?country=${country}&q=${keyword}` 
         render()
         input.value ='' // 인풋 리셋
     } 
 }
 
 function getCategory(카테고리){
-    url3 =`https://grand-gumdrop-215732.netlify.app/top-headlines?country=${country}&category=${카테고리}`; 
+    url3 =`https://chic-nasturtium-fd9a30.netlify.app/top-headlines?country=${country}&category=${카테고리}`; 
     render()
 }
 
