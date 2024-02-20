@@ -211,7 +211,7 @@ function errorRender(message){
 
 function search(){
     const keyword = input.value;
-    url3 =`https://chic-nasturtium-fd9a30.netlify.app/top-headlines=${country}&q=${keyword}` 
+    url3 =`https://chic-nasturtium-fd9a30.netlify.app/top-headlines?country=${country}&q=${keyword}` 
     render()
     input.value ='' // 인풋 리셋
 }
