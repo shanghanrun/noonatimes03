@@ -188,9 +188,7 @@ async function render(){
         } else{
             pageButton.classList.remove('active')
         }
-    }
-    //모든 쿼리를 초기화
-    
+    }   
 }
 
 function getDetail(url){
@@ -243,8 +241,6 @@ async function getNews(){
             if(data.articles.length == 0){                
                 throw new Error('No result for this search');
             }
-            // const list = data.articles;
-            // console.log('list :', list)
             return data;            
         } else{
             throw new Error('예상 못한 에러를 만났습니다.')
