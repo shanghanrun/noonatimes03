@@ -1,0 +1,3 @@
+script.js 는 Netlify와 연동되는 url주소
+
+script2.js는 로컬에서 접속하는 url주소
