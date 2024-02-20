@@ -90,7 +90,7 @@ async function render(){
     totalResults = data.totalResults;
     dataList = data.articles;
 
-    currentIndex =0;
+    // currentIndex=0 ;  초기화하면 안된다.
     totalGroupPages = Math.ceil(totalResults / pageSize)
     groups = makeGroups(totalResults)
 
