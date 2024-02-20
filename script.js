@@ -21,7 +21,6 @@ let url3 = `https://chic-nasturtium-fd9a30.netlify.app/top-headlines`
 
 
 //! 실행 코드
-let query ={country: 'kr', page: page, pageSize: pageSize}  // 쿼리를 기억해두고 있어야 된다.
 render()
 
 
@@ -88,8 +87,10 @@ function moveToPage(pageNo){
 
 
 async function render(){
-    await getNews();
-    const data = fetchData(query)
+    const data = await getNews()  
+    totalResults = data.totalResults;
+    dataList = data.articles;
+
     currentIndex =0;
     totalGroupPages = Math.ceil(totalResults / pageSize)
     groups = makeGroups(totalResults)
@@ -232,10 +233,9 @@ async function getNews(){
             if(data.articles.length == 0){                
                 throw new Error('No result for this search');
             }
-            dataList = data.articles;           
-            totalResults = data.totalResults;
-            console.log('dataList :', dataList)
-            console.log('totalResults :', totalResults)             
+            // const list = data.articles;
+            // console.log('list :', list)
+            return data;            
         } else{
             throw new Error('예상 못한 에러를 만났습니다.')
         }
