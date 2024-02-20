@@ -9,7 +9,8 @@ let groupSize =5
 let group   // 리스트자료 [1,2,3,4,5] 식
 let groups  // [ [1,2,3,4,5], [6,7,8,9,10],......]
 let groupIndex =0;
-let currentIndex = 0;    
+let currentIndex = 0;
+let gotError = false;    
 
 const replaceImage = 'noonatimes.png'
 const input = document.querySelector('#search-input')
@@ -94,10 +95,9 @@ async function render(){
     totalGroupPages = Math.ceil(totalResults / pageSize)
     groups = makeGroups(totalResults)
 
-    if (totalResults == 0){  // 중복 불필요. 나중에 지운다.
-        alert('해당 기사는 없습니다.')
-        return;
-    } // 아무 것도 안한다.
+    if(gotError){
+        return;   // --> errorRender()로 가게 한다.
+    }
     
     
     const newsBoard = document.querySelector('#news-board')
@@ -250,7 +250,9 @@ async function getNews(){
         }
 
     } catch(e){
+        gotError = true;
         console.log(e.message)
         errorRender(e.message)
+        gotError = false;
     }   
 }
