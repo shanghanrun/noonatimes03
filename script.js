@@ -198,7 +198,17 @@ async function render(){
 function getDetail(url){
     window.location.href = url;
 }
-
+function errorRender(message){
+    const newsBoard = document.querySelector('#news-board')
+    newsBoard.innerHTML ='';
+    const errorHTML = `
+        <div class="alert alert-danger" role="alert">
+            ${message}
+        </div>
+    `;
+    newsBoard.innerHTML= errorHTML;
+    document.querySelector('.pagination').innerHTML = ""
+}
 
 function search(){
     const keyword = input.value;
