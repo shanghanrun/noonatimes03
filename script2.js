@@ -1,4 +1,4 @@
-let dataList =[]
+let newsList =[]
 let totalResults 
 let totalGroupPages
 let searching = false;
@@ -93,7 +93,7 @@ async function render(){
         return;   // --> errorRender()로 가게 한다.
     } 
     totalResults = data.totalResults;
-    dataList = data.articles;
+    newsList = data.articles;
 
     // currentIndex =0;
     totalGroupPages = Math.ceil(totalResults / pageSize)
@@ -111,8 +111,8 @@ async function render(){
     pagination.innerHTML =''// 기존내용 삭제
 
     let newsHTML = '';
-    if(dataList.length == 1){      //  [{url: ..}] 형태
-        const [news] = dataList;
+    if(newsList.length == 1){      //  [{url: ..}] 형태
+        const [news] = newsList;
         newsHTML = `
             <div class="row item">
                 <div class="col-lg-4">
@@ -126,8 +126,8 @@ async function render(){
             </div>
         `;
     } else{
-        for (let i = 0; i < dataList.length; i++) {
-            const news = dataList[i];
+        for (let i = 0; i < newsList.length; i++) {
+            const news = newsList[i];
             newsHTML += `
                 <div class="row item">
                     <div class="col-lg-4">
