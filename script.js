@@ -239,7 +239,7 @@ function getCategory(카테고리){
     });
     
     // 클릭된 버튼에 selected 클래스 추가
-    var clickedButton = document.getElementById(category);
+    var clickedButton = document.getElementById(카테고리);
     clickedButton.classList.add('selected');
 
     url3 =`https://chic-nasturtium-fd9a30.netlify.app/top-headlines?country=${country}&category=${카테고리}`; 
