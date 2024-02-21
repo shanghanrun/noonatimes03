@@ -234,8 +234,11 @@ function getCategory(카테고리){
 
     // 모든 버튼에서 selected 클래스를 제거
     var buttons = document.querySelectorAll('.menus button');
+
     buttons.forEach(function(button) {
-        button.classList.remove('selected');
+        if(button.classList.contains('selected')){
+            button.classList.remove('selected');
+        }
     });
     
     // 클릭된 버튼에 selected 클래스 추가
