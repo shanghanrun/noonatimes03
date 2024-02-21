@@ -89,7 +89,7 @@ function moveToPage(pageNo){
 async function render(){
     const data = await getNews()  
     if(gotError){
-        return;   // --> errorRender()로 가게 한다.
+        return;   // --> 이미 getNews에서 실행한 errorRender()로 충분하다.
     } 
     totalResults = data.totalResults;
     newsList = data.articles;
@@ -201,7 +201,6 @@ async function render(){
 }
 
 function getDetail(url){
-    initializeSettings()
     window.location.href = url;
 }
 
