@@ -33,6 +33,7 @@
 
 #date {
     margin-top: 170px;
+    margin-left: 100px;
 }
 
 .menus {
@@ -141,10 +142,14 @@ span {
     cursor: pointer;
 }
 
-@media (min-width: 540px) and (max-width: 1010px) {
+@media (max-width: 1010px) {
     .head-line {
         width: 100%;
         position: relative;
+    }
+
+    #date {
+        display: none;
     }
 
     #head-img {
@@ -175,6 +180,17 @@ span {
         top: -50px;
         left: 63px;
         width: 80px;
+
+    }
+}
+
+@media (max-width: 538px) {
+
+    #date,
+    #search-icon,
+    #search-input,
+    #search {
+        display: none;
 
     }
 }
