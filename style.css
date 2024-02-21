@@ -102,6 +102,10 @@ img {
     border-radius: 5px;
 }
 
+.selected {
+    background: pink;
+}
+
 .active {
     background-color: rgb(123, 123, 254);
     font-style: bold;
