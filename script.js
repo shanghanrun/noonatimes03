@@ -195,6 +195,7 @@ async function render(){
 }
 
 function getDetail(url){
+    initializeSettings()
     window.location.href = url;
 }
 function errorRender(message){
@@ -210,6 +211,7 @@ function errorRender(message){
 }
 
 function search(){
+    initializeSettings()
     const keyword = input.value;
     url3 =`https://chic-nasturtium-fd9a30.netlify.app/top-headlines?country=${country}&q=${keyword}` 
     render()
@@ -228,6 +230,7 @@ function search(){
 // }
 
 function getCategory(카테고리){
+    initializeSettings()
     url3 =`https://chic-nasturtium-fd9a30.netlify.app/top-headlines?country=${country}&category=${카테고리}`; 
     render()
 }
@@ -266,4 +269,15 @@ function today(){
 
     const formattedDate = `${year}-${month}-${day}`;
     return formattedDate
+}
+
+
+function initializeSettings(){
+    page = 1
+    pageSize = 10
+    groupSize =5
+    group =[]
+    groups =[]
+    groupIndex =0;
+    currentIndex = 0;
 }
