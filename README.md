@@ -8,10 +8,10 @@
 ### . 검색기능
 
 
-![일반화면] (capture02.png)
+![일반화면](capture02.png)
 
 
-![중간화면] (capture03.png)
+![중간화면](capture03.png)
 
 
-![작은화면] (capture01.png)
+![작은화면](capture01.png)
