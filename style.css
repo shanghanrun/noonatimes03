@@ -103,7 +103,7 @@ img {
 }
 
 .selected {
-    background: pink;
+    background: rgb(123, 123, 254);
 }
 
 .active {
