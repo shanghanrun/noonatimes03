@@ -81,7 +81,6 @@ function moveToPage(pageNo){
         page = pageNo;   
         currentIndex = group.indexOf(page)
     } 
-    query.page = page;
 
     render() 
 }
