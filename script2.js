@@ -104,6 +104,8 @@ async function render(){
         return;
     } // 아무 것도 안한다.
     
+    const date = document.querySelector('#date')
+    date.innerHTML = today();
     
     const newsBoard = document.querySelector('#news-board')
     newsBoard.innerHTML =''; //비우고 시작
@@ -248,4 +250,16 @@ async function getNews(){
         errorRender(e.message)
         gotError = false;
     }   
+}
+
+
+function today(){
+    const now = new Date();
+    const year = now.getFullYear(); 
+    const month = String(now.getMonth() + 1).padStart(2, '0'); 
+    // 월을 가져오고 0을 붙여 두 자리로 만듭니다.
+    const day = String(now.getDate()).padStart(2, '0'); // 일을 가져오고 0을 붙여 두 자리로 만듭니다.
+
+    const formattedDate = `${year}-${month}-${day}`;
+    return formattedDate
 }

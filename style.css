@@ -1,13 +1,12 @@
 .head-line {
     margin-top: 1em;
     display: flex;
-    justify-content: start;
+    justify-content: space-between;
 }
 
 .head-line img {
     height: 200px;
     width: 430px;
-    padding-left: 150px;
 }
 
 .search-container {
@@ -30,6 +29,10 @@
     padding: 10px;
     background: rgb(126, 154, 253);
     border-radius: 5px;
+}
+
+#date {
+    margin-top: 170px;
 }
 
 .menus {
