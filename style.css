@@ -49,6 +49,12 @@ button {
     border: none;
     background: none;
     margin: 5px;
+    padding: 10px;
+}
+
+.menus button {
+    border-radius: 3px;
+    margin-right: 5px;
 }
 
 button:hover {
