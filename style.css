@@ -269,6 +269,10 @@ span {
 }
 
 @media (max-width: 768px) {
+    .menus {
+        display: none;
+    }
+
     .side {
         display: block;
         position: relative;
