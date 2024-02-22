@@ -60,7 +60,7 @@ function makePaginationHTML(groupIndex){   // 1, 2, 3...
         return `<button class="page-btn" id="page" onclick="moveToPage(${i})">${i}</button>`
         }).join('')
 
-    paginationHTML += `<li class="next-li"><button class="page-btn" id="next" onclick="moveToPage(${page+1})">Next</button></li><li class="next-li"><button class="page-btn" id="next-page" onclick="moveToPage('next page')">next page</button><span>${page} of ${totalGroupPages} pages</span></li>`
+    paginationHTML += `<li class="next-li"><button class="page-btn" id="next" onclick="moveToPage(${page+1})">Next</button></li><li class="next-li"><button class="page-btn" id="next-page" onclick="moveToPage('next page')">next page</button><span>${page} of </span><span id="accent">${totalGroupPages} pages</span></li>`
 
     return paginationHTML;
 }

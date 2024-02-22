@@ -147,6 +147,13 @@ span {
     margin-left: 20px;
 }
 
+#accent {
+    background: pink;
+    border-radius: 10%;
+    width: 10px;
+    padding: 5px 10px;
+    margin-left: 5px;
+}
 
 .title {
     color: rgb(18, 72, 251);
@@ -155,6 +162,11 @@ span {
 
 .title:hover {
     cursor: pointer;
+}
+
+.pagination {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 @media (max-width: 1010px) {
@@ -209,3 +221,5 @@ span {
 
     }
 }
+
+@media (max-width: 773px) {}
