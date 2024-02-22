@@ -92,6 +92,7 @@ button:hover {
 #search-icon {
     position: absolute;
     top: 120px;
+    margin-left: 4px;
     /* vertical-align: middle; */
     padding-bottom: 4px;
 }
@@ -218,10 +219,10 @@ span {
     top: 0;
     left: 0;
     background-color: rgba(62, 56, 251);
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
+    border-radius: 10px;
     opacity: 0.9;
     overflow-x: hidden;
+    transform: translateX(10px);
     transition: 0.5s;
     padding-top: 60px;
 }
