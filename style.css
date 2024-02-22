@@ -89,9 +89,14 @@ i {
     color: gray;
 }
 
-img {
+#head-img {
     max-width: 100%;
     max-height: 600px;
+}
+
+#news-image {
+    max-width: 100%;
+    max-height: 250px;
 }
 
 .content {

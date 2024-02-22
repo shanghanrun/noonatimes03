@@ -127,7 +127,7 @@ async function render(){
             newsHTML += `
                 <div class="row item">
                     <div class="col-lg-4">
-                        <img src=${news.urlToImage || replaceImage}  />
+                        <img id="news-image" src=${news.urlToImage || replaceImage}  />
                     </div>
                     <div class="col-lg-8">
                         <h2 class='title' onclick="getDetail('${news.url}')">${news.title}</h2>
