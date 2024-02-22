@@ -19,6 +19,7 @@
         <div class="side">
             <div id="mySidenav" class="sidenav">
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <a href="#" id="category-title">TOPICS</a>
                 <a href="#" onclick="getCategory('business')">Business</a>
                 <a href="#" onclick="getCategory('entertainment')">Entertainment</a>
                 <a href="#" onclick="getCategory('general')">General</a>
@@ -35,7 +36,7 @@
                     <input type="text" id="search-input" disabled />
                     <button id="search" onclick="search()" disabled>검색</button>
                 </div>
-                <img id="head-img" src="noonatimes2.png" alt="누나타임즈" />
+                <img id="head-img" onclick="run()" src="noonatimes2.png" alt="누나타임즈" />
                 <div id="date"></div>
             </div>
             <div class="menus">

@@ -13,6 +13,10 @@
     margin-top: 140px;
 }
 
+#search-icon:hover {
+    color: pink;
+}
+
 #search-icon {
     padding-right: 10px;
     font-size: 20px;
@@ -105,6 +109,8 @@ button:hover {
     /* display: none; */
     opacity: 0;
     pointer-events: none;
+    padding: 0;
+    height: 3px;
 }
 
 #search {
@@ -117,6 +123,8 @@ button:hover {
     /* display: none; */
     opacity: 0;
     pointer-events: none;
+    padding: 0;
+    height: 3px;
 }
 
 
@@ -201,11 +209,6 @@ span {
     display: none;
 }
 
-/* 
-#hamburger {
-    display: none;
-} */
-
 .sidenav {
     height: 100%;
     width: 0;
@@ -213,7 +216,9 @@ span {
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #111;
+    background-color: rgba(62, 56, 251);
+    border-top-right-radius: 10px;
+    opacity: 0.9;
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
@@ -230,6 +235,18 @@ span {
 
 .sidenav a:hover {
     color: #f1f1f1;
+    /* text-decoration: underline; */
+}
+
+.sidenav a:nth-child(2) {
+    color: inherit;
+}
+
+#category-title {
+    font-size: 30px;
+    font-weight: bold;
+    border-bottom: 1px solid black;
+    padding-bottom: 10px;
 }
 
 .sidenav .closebtn {
@@ -281,6 +298,10 @@ span {
     #hamburger {
         position: absolute;
         top: 50px;
+    }
+
+    #hamburger:hover {
+        color: pink;
     }
 
     .sidenav {
