@@ -301,24 +301,28 @@ function imgError(image){
 }
 
 function toggleInput(){
-    const searchIcon = document.querySelector('#search-icon')
     const searchInput = document.querySelector('#search-input')
     const searchButton = document.querySelector('#search')
 
-    if(searchIcon.style.color =='rgb(126, 154, 253)'){
-        searchIcon.style.color = 'pink'
-    } else{
-        searchIcon.style.color = 'rgb(126, 154, 253)'
-    }
+    // if(searchIcon.style.color =='rgb(126, 154, 253)'){
+    //     searchIcon.style.color = 'pink'
+    // } else{
+    //     searchIcon.style.color = 'rgb(126, 154, 253)'
+    // }
 
-    if(searchInput.style.display== 'none'){
-        searchInput.style.display = 'inline';
-    } else{
-        searchInput.style.display = 'none';
-    }
-    if(searchButton.style.display == 'none'){
-        searchButton.style.display = 'inline';
-    } else{
-        searchButton.style.display = 'none';
-    }
+
+    // if(searchInput.style.display== 'none'){
+    //     searchInput.style.display = 'inline';
+    // } else{
+    //     searchInput.style.display = 'none';
+    // }
+    // if(searchButton.style.display == 'none'){
+    //     searchButton.style.display = 'inline';
+    // } else{
+    //     searchButton.style.display = 'none';
+    // }
+    searchInput.disabled = !searchInput.disabled;
+    searchButton.disabled = !searchButton.disabled;
+    console.log('disabled :', searchInput.disabled);
+
 }

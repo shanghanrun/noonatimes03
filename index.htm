@@ -15,7 +15,7 @@
 
 <body>
     <section class="container">
-        <i class="fa-solid fa-magnifying-glass" id="search-icon" onclick="toggleInput()"></i>
+        <i class="fa-solid fa-magnifying-glass disabled" id="search-icon" onclick="toggleInput()" disabled></i>
         <div class="side">
             <div id="mySidenav" class="sidenav">
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -27,13 +27,13 @@
                 <a href="#" onclick="getCategory('sports')">Sports</a>
                 <a href="#" onclick="getCategory('technology')">Technology</a>
             </div>
-            <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+            <div style="font-size:30px;cursor:pointer" id="hamburger" onclick="openNav()">&#9776;</div>
         </div>
         <section>
             <div class="head-line">
                 <div class="search-container">
-                    <input type="text" id="search-input" />
-                    <button id="search" onclick="search()">검색</button>
+                    <input type="text" id="search-input" disabled />
+                    <button id="search" onclick="search()" disabled>검색</button>
                 </div>
                 <img id="head-img" src="noonatimes2.png" alt="누나타임즈" />
                 <div id="date"></div>
