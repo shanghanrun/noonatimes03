@@ -262,6 +262,10 @@ span {
         transform: translateX(-50%);
         z-index: -1;
     }
+
+    #search-icon {
+        z-index: 2;
+    }
 }
 
 @media (max-width: 768px) {
@@ -273,7 +277,6 @@ span {
     #hamburger {
         position: absolute;
         top: 50px;
-        display: inline;
     }
 
     .sidenav {
