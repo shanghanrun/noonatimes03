@@ -112,7 +112,7 @@ async function render(){
         newsHTML = `
             <div class="row item">
                 <div class="col-lg-4">
-                    <img id="news-image" src=${news.urlToImage || replaceImage}  />
+                    <img id="news-image" src=${news.urlToImage || replaceImage} onerror="imgError(this)" />
                 </div>
                 <div class="col-lg-8">
                     <h2 class='title' onclick="getDetail('${news.url}')">${news.title}</h2>
@@ -127,7 +127,7 @@ async function render(){
             newsHTML += `
                 <div class="row item">
                     <div class="col-lg-4">
-                        <img id="news-image" src=${news.urlToImage || replaceImage}  />
+                        <img id="news-image" src=${news.urlToImage || replaceImage} onerror="imgError(this)" />
                     </div>
                     <div class="col-lg-8">
                         <h2 class='title' onclick="getDetail('${news.url}')">${news.title}</h2>
@@ -293,4 +293,9 @@ function initializeSettings(){
     groups =[]
     groupIndex =0;
     currentIndex = 0;
+}
+
+function imgError(image){
+    image.onerror = null; // 이미지 에러 핸들러를 중복호출하지 않도록 이벤트 리스너를 제거한다.
+    image.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqEWgS0uxxEYJ0PsOb2OgwyWvC0Gjp8NUdPw&usqp=CAU";
 }
