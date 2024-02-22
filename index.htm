@@ -15,10 +15,23 @@
 
 <body>
     <section class="container">
+        <i class="fa-solid fa-magnifying-glass" id="search-icon" onclick="toggleInput()"></i>
+        <div class="side">
+            <div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <a href="#" onclick="getCategory('business')">Business</a>
+                <a href="#" onclick="getCategory('entertainment')">Entertainment</a>
+                <a href="#" onclick="getCategory('general')">General</a>
+                <a href="#" onclick="getCategory('health')">Health</a>
+                <a href="#" onclick="getCategory('science')">Science</a>
+                <a href="#" onclick="getCategory('sports')">Sports</a>
+                <a href="#" onclick="getCategory('technology')">Technology</a>
+            </div>
+            <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+        </div>
         <section>
             <div class="head-line">
                 <div class="search-container">
-                    <i class="fa-solid fa-magnifying-glass" id="search-icon"></i>
                     <input type="text" id="search-input" />
                     <button id="search" onclick="search()">검색</button>
                 </div>
@@ -51,6 +64,15 @@
         integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL'
         crossorigin='anonymous'></script>
     <script src='https://kit.fontawesome.com/2852ddf98d.js' crossorigin='anonymous'></script>
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+    </script>
     <script src='script.js'></script>
 </body>
 

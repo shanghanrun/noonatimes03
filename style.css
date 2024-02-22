@@ -31,6 +31,14 @@
     border-radius: 5px;
 }
 
+.display-inline {
+    display: inline;
+}
+
+.display-none {
+    display: none;
+}
+
 #date {
     margin-top: 170px;
     margin-left: 100px;
@@ -73,21 +81,33 @@ button:hover {
     padding-top: 10px;
 }
 
-/* 입력 필드의 스타일 */
-.search-input {
-    padding-left: 25px;
-    /* 아이콘의 너비만큼 입력 필드를 내부적으로 이동 */
-}
-
-#search-button {
-    background-color: rgb(126, 154, 253);
+.container {
+    position: relative;
 }
 
 i {
+    position: absolute;
+    top: 120px;
     vertical-align: middle;
     padding-bottom: 4px;
     color: gray;
 }
+
+/* 입력 필드의 스타일 */
+#search-input {
+    display: none;
+    padding-left: 25px;
+    /* 아이콘의 너비만큼 입력 필드를 내부적으로 이동 */
+    transition: all 0.6s;
+}
+
+#search {
+    display: none;
+    background-color: rgb(126, 154, 253);
+    transition: all 0.6s;
+}
+
+
 
 /* #head-img {
     max-width: 100%;
@@ -169,6 +189,56 @@ span {
     flex-wrap: wrap;
 }
 
+.side {
+    display: none;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+
+    .sidenav a {
+        font-size: 18px;
+    }
+}
+
+
+
 @media (max-width: 1010px) {
     .head-line {
         width: 100%;
@@ -190,8 +260,9 @@ span {
 
     #search-icon {
         position: absolute;
-        top: -30px;
+        top: 110px;
         left: 10px;
+        padding: 10px
     }
 
     #search-input {
@@ -200,6 +271,7 @@ span {
         padding: 2px;
         padding-left: 10px;
         width: 150px;
+        display: inline;
     }
 
     #search {
@@ -207,11 +279,19 @@ span {
         top: -50px;
         left: 63px;
         width: 80px;
+        display: inline;
 
     }
 }
 
-@media (max-width: 538px) {
+@media (max-width: 773px) {
+    .side {
+        display: block;
+    }
+
+    .menus {
+        display: none;
+    }
 
     #date,
     #search-icon,
@@ -221,5 +301,3 @@ span {
 
     }
 }
-
-@media (max-width: 773px) {}

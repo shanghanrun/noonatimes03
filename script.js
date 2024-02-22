@@ -299,3 +299,26 @@ function imgError(image){
     image.onerror = null; // 이미지 에러 핸들러를 중복호출하지 않도록 이벤트 리스너를 제거한다.
     image.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqEWgS0uxxEYJ0PsOb2OgwyWvC0Gjp8NUdPw&usqp=CAU";
 }
+
+function toggleInput(){
+    const searchIcon = document.querySelector('#search-icon')
+    const searchInput = document.querySelector('#search-input')
+    const searchButton = document.querySelector('#search')
+
+    if(searchIcon.style.color =='rgb(126, 154, 253)'){
+        searchIcon.style.color = 'pink'
+    } else{
+        searchIcon.style.color = 'rgb(126, 154, 253)'
+    }
+
+    if(searchInput.style.display== 'none'){
+        searchInput.style.display = 'inline';
+    } else{
+        searchInput.style.display = 'none';
+    }
+    if(searchButton.style.display == 'none'){
+        searchButton.style.display = 'inline';
+    } else{
+        searchButton.style.display = 'none';
+    }
+}
