@@ -265,6 +265,14 @@ span {
     #search-icon {
         z-index: 2;
     }
+
+    #hamburger {
+        z-index: 2;
+    }
+
+    .sidenav {
+        z-index: 3;
+    }
 }
 
 @media screen and (max-width: 768px) {
