@@ -122,21 +122,18 @@ async function render(){
             </div>
         `;
     } else{
-        for (let i = 0; i < newsList.length; i++) {
-            const news = newsList[i];
-            newsHTML += `
-                <div class="row item">
-                    <div class="col-lg-4">
-                        <img id="news-image" src=${news.urlToImage || replaceImage} onerror="imgError(this)" />
-                    </div>
-                    <div class="col-lg-8">
-                        <h2 class='title' onclick="getDetail('${news.url}')">${news.title}</h2>
-                        <p class='content'>${news.description || news.content}</p>
-                        <div>${news.source.name} : ${news.publishedAt}</div>
-                    </div>
+        newsHTML = newsList.map(news => 
+            `<div class="row item">
+                <div class="col-lg-4">
+                    <img id="news-image" src=${news.urlToImage || replaceImage} onerror="imgError(this)" />
                 </div>
-            `;
-        }
+                <div class="col-lg-8">
+                    <h2 class='title' onclick="getDetail('${news.url}')">${news.title}</h2>
+                    <p class='content'>${news.description || news.content}</p>
+                    <div>${news.source.name} : ${news.publishedAt}</div>
+                </div>
+            </div>`
+        ).join('')
     }
     newsBoard.innerHTML = newsHTML;
     pagination.innerHTML =  makePaginationHTML(groupIndex)
@@ -216,24 +213,12 @@ function search(){
     render()
     input.value ='' // 인풋 리셋
 }
-// function search2(){
-//     const keyword = input.value;
-//     const e = window.event; 
-//     console.log(e.key)
-//     if (e.key =='Enter'){
-//         console.log('enter')
-//         url3 =`https://chic-nasturtium-fd9a30.netlify.app/top-headlines?country=${country}&q=${keyword}` 
-//         render()
-//         input.value ='' // 인풋 리셋
-//     } 
-// }
 
 function getCategory(카테고리){
     initializeSettings()
 
     // 모든 버튼에서 selected 클래스를 제거
     var buttons = document.querySelectorAll('.menus button');
-
     buttons.forEach(function(button) {
         if(button.classList.contains('selected')){
             button.classList.remove('selected');
@@ -250,8 +235,8 @@ function getCategory(카테고리){
 
 async function getNews(){
     const newsUrl = new URL(url3);
-    newsUrl.searchParams.set("page",page)  // &page=page
-    newsUrl.searchParams.set("pageSize",pageSize) //&pageSize=pageSize
+    newsUrl.searchParams.set("page",page)  
+    newsUrl.searchParams.set("pageSize",pageSize) 
     try{
         const response = await fetch(newsUrl);  
         const data = await response.json()
@@ -277,8 +262,7 @@ function today(){
     const now = new Date();
     const year = now.getFullYear(); 
     const month = String(now.getMonth() + 1).padStart(2, '0'); 
-    // 월을 가져오고 0을 붙여 두 자리로 만듭니다.
-    const day = String(now.getDate()).padStart(2, '0'); // 일을 가져오고 0을 붙여 두 자리로 만듭니다.
+    const day = String(now.getDate()).padStart(2, '0'); 
 
     const formattedDate = `${year}-${month}-${day}`;
     return formattedDate
