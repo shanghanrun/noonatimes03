@@ -107,34 +107,18 @@ async function render(){
     pagination.innerHTML =''// 기존내용 삭제
 
     let newsHTML = '';
-    if(newsList.length == 1){      //  [{url: ..}] 형태
-        const [news] = newsList;
-        newsHTML = `
-            <div class="row item">
-                <div class="col-lg-4">
-                    <img id="news-image" src=${news.urlToImage || replaceImage} onerror="imgError(this)" />
-                </div>
-                <div class="col-lg-8">
-                    <h2 class='title' onclick="getDetail('${news.url}')">${news.title}</h2>
-                    <p class='content'>${news.description || news.content}</p>
-                    <div>${news.source.name} : ${news.publishedAt}</div>
-                </div>
+    newsHTML = newsList.map(news => 
+        `<div class="row item">
+            <div class="col-lg-4">
+                <img id="news-image" src=${news.urlToImage || replaceImage} onerror="imgError(this)" />
             </div>
-        `;
-    } else{
-        newsHTML = newsList.map(news => 
-            `<div class="row item">
-                <div class="col-lg-4">
-                    <img id="news-image" src=${news.urlToImage || replaceImage} onerror="imgError(this)" />
-                </div>
-                <div class="col-lg-8">
-                    <h2 class='title' onclick="getDetail('${news.url}')">${news.title}</h2>
-                    <p class='content'>${news.description || news.content}</p>
-                    <div>${news.source.name} : ${news.publishedAt}</div>
-                </div>
-            </div>`
-        ).join('')
-    }
+            <div class="col-lg-8">
+                <h2 class='title' onclick="getDetail('${news.url}')">${news.title}</h2>
+                <p class='content'>${news.description || news.content}</p>
+                <div>${news.source.name} : ${news.publishedAt}</div>
+            </div>
+        </div>`
+    ).join('')
     newsBoard.innerHTML = newsHTML;
     pagination.innerHTML =  makePaginationHTML(groupIndex)
 
