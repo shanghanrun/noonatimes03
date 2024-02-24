@@ -163,7 +163,11 @@ async function render(){
     }
     if(groups.length > groupIndex+1){
         nextPage.disabled = false;
-        // 현재 5 그룹페이지(groupIndex 4 + 1)   groups =[[1][2][3][4][*5*][6]] 
+        // groups =[[1,2,3,4,5][6,7,8]] 일 경우, 현재 group이 [6,7,8]이라면
+		// groupIndex는 1, groups.length는 2    [disabled = true]
+
+		// groups=[[1,2,3,4,5],[6,7,8,9,10],[11,12]]일 경우, 현재group [6,7,..10]
+        // groupIndex는 1, groups.length는 3    [disabled = false]
     }
 
     if(currentIndex ==0){
@@ -178,7 +182,7 @@ async function render(){
         nextPage.disabled = true;
     }
 
-    // 현재 페이지 버튼 활성화(진하게)
+    // 현재 페이지 버튼 활성화(진하게) --> html에서 처리하였다.
     // const pageButtons = document.querySelectorAll('.page-btn')
     // for( let pageButton of pageButtons){
     //     if(pageButton.innerText == page.toString()){
