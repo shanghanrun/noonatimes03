@@ -53,14 +53,28 @@ function makePaginationHTML(groupIndex){   // 1, 2, 3...
     const currentGroup = groupIndex      // nextGroup을 다루기 위해 변수 필요
     group = groups[currentGroup]  // 첫번째 그룹은 groups[0]  
                        // [1,2,3,4,5] 혹은 [6,7,8,9,10]
-    let paginationHTML =`<li class="prev-li"><button class="page-btn" id="prev-page" onclick="moveToPage('prev page')">prev page</button></li><li class="page-li"><button class="page-btn" id="prev" onclick="moveToPage(${page-1})">Prev</button></li>`;
+    let paginationHTML =
+    `<li class="prev-li">
+        <button class="page-btn" id="prev-page" onclick="moveToPage('prev page')">prev page</button>
+    </li>
+    <li class="page-li">
+        <button class="page-btn" id="prev" onclick="moveToPage(${page-1})">Prev</button>
+    </li>`;
     // page가 전역변수라서 page-1 이 최신페이지에서 이전페이지가 된다.
     
     paginationHTML +=  group.map(i => {
         return `<button class="page-btn ${i==page? 'active' : ''}" id="page" onclick="moveToPage(${i})">${i}</button>`
         }).join('')
 
-    paginationHTML += `<li class="next-li"><button class="page-btn" id="next" onclick="moveToPage(${page+1})">Next</button></li><li class="next-li"><button class="page-btn" id="next-page" onclick="moveToPage('next page')">next page</button><span>${page} of </span><span id="accent">${totalGroupPages} pages</span></li>`
+    paginationHTML += `
+    <li class="next-li">
+        <button class="page-btn" id="next" onclick="moveToPage(${page+1})">Next</button>
+    </li>
+    <li class="next-li">
+        <button class="page-btn" id="next-page" onclick="moveToPage('next page')">next page</button>
+        <span>${page} of </span>
+        <span id="accent">${totalGroupPages} pages</span>
+    </li>`
 
     return paginationHTML;
 }
