@@ -57,7 +57,7 @@ function makePaginationHTML(groupIndex){   // 1, 2, 3...
     // page가 전역변수라서 page-1 이 최신페이지에서 이전페이지가 된다.
     
     paginationHTML +=  group.map(i => {
-        return `<button class="page-btn" id="page" onclick="moveToPage(${i})">${i}</button>`
+        return `<button class="page-btn ${i==page? 'active' : ''}" id="page" onclick="moveToPage(${i})">${i}</button>`
         }).join('')
 
     paginationHTML += `<li class="next-li"><button class="page-btn" id="next" onclick="moveToPage(${page+1})">Next</button></li><li class="next-li"><button class="page-btn" id="next-page" onclick="moveToPage('next page')">next page</button><span>${page} of </span><span id="accent">${totalGroupPages} pages</span></li>`
@@ -134,7 +134,7 @@ async function render(){
     const next = document.querySelector('#next')
     const nextPage = document.querySelector('#next-page')
 
-    const endIndexOfTheGroup = group.length-1  //해당그룹의 마지막 인덱스
+    const lastIndex = group.length-1  //해당그룹의 마지막 인덱스
 
     // prev next 등 비활성화 여부
     if(group.length ==1){  
@@ -155,7 +155,7 @@ async function render(){
     if(currentIndex ==0){
         prev.disabled =true;
         
-    } else if(currentIndex == endIndexOfTheGroup){
+    } else if(currentIndex == lastIndex){
         next.disabled = true;
     } 
     if(groupIndex ==0){
@@ -165,14 +165,14 @@ async function render(){
     }
 
     // 현재 페이지 버튼 활성화(진하게)
-    const pageButtons = document.querySelectorAll('.page-btn')
-    for( let pageButton of pageButtons){
-        if(pageButton.innerText == page.toString()){
-            pageButton.classList.add('active')
-        } else{
-            pageButton.classList.remove('active')
-        }
-    }   
+    // const pageButtons = document.querySelectorAll('.page-btn')
+    // for( let pageButton of pageButtons){
+    //     if(pageButton.innerText == page.toString()){
+    //         pageButton.classList.add('active')
+    //     } else{
+    //         pageButton.classList.remove('active')
+    //     }
+    // }   
 }
 
 function getDetail(url){
